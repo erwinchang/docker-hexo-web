@@ -8,7 +8,7 @@
 	mkdir -p /root/.ssh
 	cp /root/tmp/.ssh/* /root/.ssh
 	rm -rf /root/tmp/.ssh/known_hosts*
-	cat /root/tmp/.ssh/config | sed 's/home.*ssh/root\/.ssh/g' > /root/.ssh/config
+	cat /root/tmp/.ssh/config | sed 's/home.*ssh/root\/.ssh/g' | sed 's/\/var\/services//g' > /root/.ssh/config
 }
 
 echo "cmd: $1, $2, $3"
